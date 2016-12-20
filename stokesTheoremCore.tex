@@ -117,6 +117,48 @@ The Stokes integral can be evaluated over this volume element for either scalar 
 \end{equation}
 \end{subequations}
 
+To extract the full meaning of this the boundary differential \( d^1 \Bx \) must be computed.  This has the same structure for a vector or scalar field
+
+\begin{dmath}\label{eqn:stokesTheoremCore:220}
+\begin{aligned}
+\int_A d^2 \Bx \cdot (\boldpartial \wedge \Bf)
+&=
+\int_A (d^2 \Bx \cdot \boldpartial) \cdot \Bf \\
+&=
+\sum_\mu \int_A (d^2 \Bx \cdot \Bx^\mu) \cdot \partial_\mu \Bf \\
+&=
+\sum_\mu \int_A da db  \lr{ \Bx_a \wedge \Bx_b ) \cdot \Bx^\mu } \cdot \partial_\mu \Bf \\
+&=
+\sum_\mu \int_A da db  \lr{ \Bx_a {\delta_b}^\mu - \Bx_b {\delta_a}^\mu } \cdot \partial_\mu \Bf \\
+&=
+\int_A da db  \lr{ \Bx_a \cdot \PD{b}{ \Bf} - \Bx_b \cdot \PD{a}{\Bf} }
+\end{aligned}
+\end{dmath}
+
+While \( \Bx_a, \Bx_b \) both depend on both parameters \( a, b \), the differential form immediately above is still a perfect integral in the variables of the partials since \( \Bx_a \) is computed with \( b \) held fixed, and \( \Bx_b \) is computed with \( a \) held fixed.  Proceeding with the integrals that match the respective partials, this gives
+
+\begin{dmath}\label{eqn:stokesTheoremCore:240}
+\int_A d^2 \Bx \cdot (\boldpartial \wedge \Bf)
+=
+\int
+da \Bx_a \cdot \evalbar{\Bf}{\Delta b}
+-\int
+db \Bx_b \cdot \evalbar{\Bf}{\Delta a}
+=
+\int
+d\Bx_a \cdot \evalbar{\Bf}{\Delta b}
+-\int
+d\Bx_b \cdot \evalbar{\Bf}{\Delta a}.
+\end{dmath}
+
+This shows that the boundary differential \( d^1 \Bx \) in \cref{eqn:stokesTheoremCore:140} is given by
+
+\begin{dmath}\label{eqn:stokesTheoremCore:260}
+d^1 \Bx = d\Bx_a - d\Bx_b,
+\end{dmath}
+
+where it is implied that the field in question is evaluated at the boundaries of the parameter that has been eliminated by this first integration.
+
 \section{Helper theorem}
 
 \input{../gabookI/appendix/wedgeDistributionIdentity.tex}
