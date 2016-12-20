@@ -6,7 +6,7 @@
 
 Stokes theorem is fairly easy to state, but takes a fair amount of work to understand and unpack its implications.
 
-\input{../../physicsplay/notes/gabookI/calculus/stokesTheoremTheStatement.tex}
+\input{../gabookI/calculus/stokesTheoremTheStatement.tex}
 
 \section{One parameter specialization of Stokes' theorem.}
 
@@ -18,14 +18,20 @@ An example parameterization with one parameter, and the corresponding differenti
 The differential with respect to the parameter \( a \) is
 
 \begin{equation}\label{eqn:stokesTheoremCore:20}
-d\Bx = \PD{a}{\Bx} da \equiv \Bx^a da.
+d\Bx_a = \PD{a}{\Bx} da \equiv \Bx_a da.
 \end{equation}
 
 On this curve the projection of the gradient has just one component
 
-\begin{equation}\label{eqn:stokesTheoremCore:40}
-\boldpartial = \Bx^a \partial_a.
-\end{equation}
+\begin{dmath}\label{eqn:stokesTheoremCore:40}
+\boldpartial
+=
+\sum_\mu \Bx^\mu (\Bx_\mu \cdot \spacegrad)
+=
+\Bx^a \PD{a}{}
+\equiv
+\Bx^a \partial_a.
+\end{dmath}
 
 Stokes theorem for a one parameter manifold can only be expressed for scalar fields.  That is
 
@@ -42,7 +48,7 @@ Observe that the vector derivative can be replaced by the gradient since \( d\Bx
 This is the case since dotting the
 gradient with a differential element \( d\Bx \) on this curve, no component of the gradient that isn't colinear to the curve makes no contribution.
 
-That means that Stokes' theorem for a one parameter curve is exactly the fundamental theorem of calculus
+That means that Stokes' theorem for a one parameter curve is exactly the fundamental theorem of calculus for line integrals
 
 \begin{dmath}\label{eqn:stokesTheoremCore:80}
 \int_{\Ba}^{\Bb} d\Bx \cdot \spacegrad \phi = \phi(\Bb) - \phi(\Ba).
@@ -50,4 +56,4 @@ That means that Stokes' theorem for a one parameter curve is exactly the fundame
 
 \section{Helper theorem}
 
-\input{../../physicsplay/notes/gabookI/appendix/wedgeDistributionIdentity.tex}
+\input{../gabookI/appendix/wedgeDistributionIdentity.tex}
