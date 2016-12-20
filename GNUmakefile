@@ -1,6 +1,6 @@
 THISDIR := stokesTheorem
 THISBOOK := $(THISDIR)
-#BASEVER := 13a3089
+BASEVER := daa1713
 
 include ../latex/make.vars
 
@@ -11,7 +11,9 @@ GENERATED_PDFS += $(THISBOOK).pdf
 
 all :: myrefs.bib $(GENERATED_PDFS)
 
-$(THISBOOK).pdf :: stokesTheoremCore.tex
 $(GENERATED_PDFS) :: $(JUSTBOOKDEPENDENCIES) $(LOCAL_FILES) $(GENERATED_SOURCES) $(COPIED_FILES) $(LOCAL_COPIED_FILES)
+$(THISBOOK).pdf :: stokesTheoremCore.tex
+$(THISBOOK).pdf :: ../../physicsplay/notes/gabookI/appendix/wedgeDistributionIdentity.tex
+$(THISBOOK).pdf :: ../../physicsplay/notes/gabookI/calculus/stokesTheoremTheStatement.tex
 
 include ../latex/make.rules

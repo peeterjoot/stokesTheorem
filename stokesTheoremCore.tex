@@ -4,35 +4,50 @@
 %
 \section{Stokes Theorem}
 
-Stokes theorem is easy to state, but takes a fair amount of work to understand and unpack its implications.
+Stokes theorem is fairly easy to state, but takes a fair amount of work to understand and unpack its implications.
 
-\maketheorem{Stokes' Theorem}{thm:stokesTheoremGeometricAlgebra:1740}{
+\input{../../physicsplay/notes/gabookI/calculus/stokesTheoremTheStatement.tex}
 
-For blades \(F \in \bigwedge^{s}\), and \(m\) volume element \(d^k \Bx, s < k\),
+\section{One parameter specialization of Stokes' theorem.}
 
-\begin{equation*}%\label{eqn:stokesTheoremGeometricAlgebra:120}
-\int_V d^k \Bx \cdot (\boldpartial \wedge F) = \int_{\partial V} d^{k-1} \Bx \cdot F.
-\end{equation*}
+An example parameterization with one parameter, and the corresponding differential with respect to that parameter, is plotted in
+\cref{fig:oneParameterDifferential:oneParameterDifferentialFig1}.
 
-Here the volume integral is over a \(m\) dimensional surface (manifold).  The derivative operator \(\boldpartial\) is called the vector derviative and is the projection of the gradient onto the tangent space of the manifold.  Integration over the boundary of \(V\) is indicated by \( \partial V \).
-}
+\imageFigure{../figures/oneParameterDifferentialFig1}{One parameter manifold.}{fig:oneParameterDifferential:oneParameterDifferentialFig1}{0.3}
 
-The vector derivative is defined by
+The differential with respect to the parameter \( a \) is
 
-\begin{equation}\label{eqn:stokesTheoremGeometricAlgebra:1400}
-\boldpartial = \Bx^i \partial_i = \sum_i \Bx_i \PD{u^i}{}.
+\begin{equation}\label{eqn:stokesTheoremCore:20}
+d\Bx = \PD{a}{\Bx} da \equiv \Bx^a da.
 \end{equation}
 
-where \( \Bx^i \) are reciprocal frame vectors dual to the tangent vector basis \( \Bx_i \) associated with the parameters \( u^1, u^2, \cdots \).  These will be defined in more detail in the next section.  Once the volume element, vector product and the other concepts are defined, the proof of
-Stokes theorem is really just a statement that
+On this curve the projection of the gradient has just one component
 
-\boxedEquation{eqn:stokesTheoremGeometricAlgebra:2840}{
-\int_V d^k \Bx \cdot (\Bx^i \partial_i \wedge F) =
-\int_V \lr{ d^k \Bx \cdot \Bx^i } \cdot \partial_i F.
-}
+\begin{equation}\label{eqn:stokesTheoremCore:40}
+\boldpartial = \Bx^a \partial_a.
+\end{equation}
 
-This dot product expansion applies to any degree blade and volume element provided the degree of the blade is less than that of the volume element (i.e. \(s < k\)).  That magic follows directly from \cref{thm:stokesTheoremGeometricAlgebra:1420}.
+Stokes theorem for a one parameter manifold can only be expressed for scalar fields.  That is
 
-\section{helper theorems}
+\begin{dmath}\label{eqn:stokesTheoremCore:60}
+\int d\Bx \cdot (\boldpartial \wedge \phi)
+=
+\int d\Bx \cdot \boldpartial \phi
+=
+\int da \PD{a}{ \phi }
+= \evalbar{\phi}{\Delta a}.
+\end{dmath}
+
+Observe that the vector derivative can be replaced by the gradient since \( d\Bx \cdot \boldpartial = d\Bx \cdot \spacegrad \).
+This is the case since dotting the
+gradient with a differential element \( d\Bx \) on this curve, no component of the gradient that isn't colinear to the curve makes no contribution.
+
+That means that Stokes' theorem for a one parameter curve is exactly the fundamental theorem of calculus
+
+\begin{dmath}\label{eqn:stokesTheoremCore:80}
+\int_{\Bx}^{\Bx'} d\Bx \cdot \spacegrad \phi = \phi(\Bx') - \phi(\Bx).
+\end{dmath}
+
+\section{Helper theorem}
 
 \input{../../physicsplay/notes/gabookI/appendix/wedgeDistributionIdentity.tex}
