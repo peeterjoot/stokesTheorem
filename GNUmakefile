@@ -19,7 +19,11 @@ all :: myrefs.bib $(GENERATED_PDFS)
 
 $(GENERATED_PDFS) :: $(JUSTBOOKDEPENDENCIES) $(LOCAL_FILES) $(GENERATED_SOURCES) $(COPIED_FILES) $(LOCAL_COPIED_FILES)
 $(THISBOOK).pdf :: $(PDFS_FROM_EPS)
-$(THISBOOK).pdf :: stokesTheoremCore.tex
+$(THISBOOK).pdf :: statement.tex
+$(THISBOOK).pdf :: oneparameter.tex
+$(THISBOOK).pdf :: twoparameter.tex
+$(THISBOOK).pdf :: threeparameter.tex
+$(THISBOOK).pdf :: scalarVolumeElement.tex
 $(THISBOOK).pdf :: bladeDotWedgeSymmetryIdentities.tex
 $(THISBOOK).pdf :: bladeDotWedgeSymmetryIdentitiesTheorem.tex
 $(THISBOOK).pdf :: Bibliography.bib
