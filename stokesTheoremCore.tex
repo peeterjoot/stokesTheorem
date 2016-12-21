@@ -259,7 +259,9 @@ The Stokes integral can be evaluated over this volume element for either scalar 
 \end{equation}
 \end{subequations}
 
-Once again, the differential form for the boundary is obtained from the mnemonic \cref{eqn:stokesTheoremCore:1561}
+When working with \R{3} vector spaces, \( \boldpartial = \spacegrad \), but in higher dimensional spaces, the gradient can also be substituted above due using the same arguments about projection onto the tangent space.
+
+An explicit value for the differential form of the boundary integral is desired and can be obtained from the mnemonic \cref{eqn:stokesTheoremCore:1561}
 
 \begin{dmath}\label{eqn:stokesTheoremCore:1581}
 \sum_i d^3 \Bx \cdot \Bx^i
@@ -269,10 +271,10 @@ Once again, the differential form for the boundary is obtained from the mnemonic
 \sum_i da db dc \lr{
 \Bx_a \wedge \Bx_b +
 \Bx_b \wedge \Bx_c +
-\Bx_c \wedge \Bx_a },
+\Bx_c \wedge \Bx_a }.
 \end{dmath}
 
-so the bounding form for the three parameter volume is
+The bounding form for the three parameter volume is therefore
 
 \begin{dmath}\label{eqn:stokesTheoremCore:1601}
 d^2 \Bx
@@ -281,6 +283,8 @@ d\Bx_a \wedge d\Bx_b +
 d\Bx_b \wedge d\Bx_c +
 d\Bx_c \wedge d\Bx_a.
 \end{dmath}
+
+\section{Related identities}
 
 \section{Helper theorem}
 
