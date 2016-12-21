@@ -1,0 +1,82 @@
+%
+% Copyright © CCYY Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+
+\makeproblem{Blade dot and wedge product reductions}{problem:bladeDotWedgeSymmetryIdentities:1}{
+Prove \cref{thm:bladeDotWedgeSymmetryIdentities:180}.
+} % problem
+
+\makeanswer{problem:bladeDotWedgeSymmetryIdentities:1}{
+
+The vector product \( B \Ba \) can have only grades \( k-1, k+1 \), so can be written as
+
+\begin{dmath}\label{eqn:bladeDotWedgeSymmetryIdentities:20}
+\begin{aligned}
+B \Ba &= B \cdot \Ba + B \wedge \Ba \\
+\Ba B &= \Ba \cdot B + \Ba \wedge B.
+\end{aligned}
+\end{dmath}
+
+Suppose that a factorization for the blade \( B \) is found of the form
+
+\begin{dmath}\label{eqn:bladeDotWedgeSymmetryIdentities:40}
+B = \Bb_1 \wedge \Bb_2 \wedge \cdots \wedge \Bb_k.
+\end{dmath}
+
+Then by successive anticommutation of the wedge products
+
+\begin{dmath}\label{eqn:bladeDotWedgeSymmetryIdentities:60}
+\Ba \wedge B = (-1)^k B \wedge \Ba.
+\end{dmath}
+
+The dot products from each direction can also be related
+
+\begin{subequations}
+\label{eqn:bladeDotWedgeSymmetryIdentities:80}
+\begin{equation}\label{eqn:bladeDotWedgeSymmetryIdentities:100}
+\begin{aligned}
+\Ba \cdot B
+&= (\Ba \cdot \Bb_1) (\Bb_2 \wedge \Bb_3 \wedge \cdots \wedge \Bb_k) \\
+&- (\Ba \cdot \Bb_2) (\Bb_1 \wedge \Bb_3 \wedge \cdots \wedge \Bb_k) \\
+&+ \cdots \\
+&+ (-1)^{k-1} (\Ba \cdot \Bb_k) (\Bb_1 \wedge \Bb_2 \wedge \cdots \wedge \Bb_{k-1})
+\end{aligned}
+\end{equation}
+\begin{equation}\label{eqn:bladeDotWedgeSymmetryIdentities:120}
+\begin{aligned}
+B \cdot \Ba
+&=
+(\Bb_1 \wedge \Bb_2 \wedge \cdots \wedge \Bb_{k-1}) (\Bb_k \cdot \Ba)
+-(\Bb_1 \wedge \Bb_2 \wedge \cdots \wedge \Bb_{k-2} \wedge \Bb_k) (\Bb_{k-1} \cdot \Ba)
+&+ \cdots \\
+&+ (-1)^{k-1} (\Bb_2 \wedge \Bb_3 \wedge \cdots \wedge \Bb_{k}) (\Ba \cdot \Bb_1)
+\end{aligned}
+\end{equation}
+\end{subequations}
+
+Comparision shows that
+
+\begin{dmath}\label{eqn:bladeDotWedgeSymmetryIdentities:140}
+\Ba \cdot B = (-1)^{k-1} B \cdot \Ba.
+\end{dmath}
+
+The second of the pair of products of \cref{eqn:bladeDotWedgeSymmetryIdentities:20} can now be rewritten
+
+\begin{dmath}\label{eqn:bladeDotWedgeSymmetryIdentities:160}
+\begin{aligned}
+B \Ba &= B \cdot \Ba + B \wedge \Ba \\
+(-1)^k \Ba B &= - B \cdot \Ba + B \wedge \Ba.
+\end{aligned}
+\end{dmath}
+
+Adding these gives
+
+\begin{dmath}\label{eqn:bladeDotWedgeSymmetryIdentities:240}
+\begin{aligned}
+B \wedge \Ba &= \inv{2}\lr{ B \Ba + (-1)^k \Ba B } \\
+B \cdot \Ba &= \inv{2}\lr{ B \Ba - (-1)^k \Ba B },
+\end{aligned}
+\end{dmath}
+
+} % answer
