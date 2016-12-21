@@ -1,2 +1,4 @@
 ../latex/bin/lgrep stokesTheoremCore.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl stokesTheoremCore.tex
+../latex/bin/lgrep stokesTheoremCoreProblems.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl stokesTheoremCoreProblems.tex

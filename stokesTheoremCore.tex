@@ -46,12 +46,12 @@ Please see \citep{aMacdonaldVAGC} for a full justification of the curvilinear co
 Stokes' theorem for a one parameter manifold can only be expressed for scalar fields.  That is
 
 \begin{dmath}\label{eqn:stokesTheoremCore:60}
-\int d\Bx \cdot (\boldpartial \wedge \phi)
+\int d\Bx \cdot (\boldpartial \wedge \psi)
 =
-\int d\Bx \cdot \boldpartial \phi
+\int d\Bx \cdot \boldpartial \psi
 =
-\int da \PD{a}{ \phi }
-= \evalbar{\phi}{\Delta a}.
+\int da \PD{a}{ \psi }
+= \evalbar{\psi}{\Delta a}.
 \end{dmath}
 
 Observe that the vector derivative can be replaced by the gradient since \( d\Bx \cdot \boldpartial = d\Bx \cdot \spacegrad \).
@@ -62,7 +62,7 @@ That means that Stokes' theorem for a one parameter curve is exactly the fundame
 
 %\begin{dmath}\label{eqn:stokesTheoremCore:80}
 \boxedEquation{eqn:stokesTheoremCore:80}{
-\int_{\Ba}^{\Bb} d\Bx \cdot \spacegrad \phi = \phi(\Bb) - \phi(\Ba).
+\int_{\Ba}^{\Bb} d\Bx \cdot \spacegrad \psi = \psi(\Bb) - \psi(\Ba).
 }
 %\end{dmath}
 
@@ -109,15 +109,15 @@ The vector derivative, the projection of the gradient onto the surface at the po
 \Bx^b \partial_b.
 \end{dmath}
 
-The Stokes integral can be evaluated over this volume element for either scalar fields \( \phi \) or vector fields \( \Bf \), and takes the form
+The Stokes integral can be evaluated over this volume element for either scalar fields \( \psi \) or vector fields \( \Bf \), and takes the form
 
 \begin{subequations}
 \label{eqn:stokesTheoremCore:140}
 \begin{equation}\label{eqn:stokesTheoremCore:160}
-\int_A d^2 \Bx \cdot (\boldpartial \wedge \phi) =
-\int_A (d^2 \Bx \cdot \boldpartial) \phi
+\int_A d^2 \Bx \cdot (\boldpartial \wedge \psi) =
+\int_A (d^2 \Bx \cdot \boldpartial) \psi
 =
-\int_{\partial A} d^1 \Bx \phi
+\int_{\partial A} d^1 \Bx \psi
 \end{equation}
 \begin{equation}\label{eqn:stokesTheoremCore:180}
 \int_A d^2 \Bx \cdot (\boldpartial \wedge \Bf) =
@@ -178,7 +178,7 @@ This allows the two parameter Stokes integrals to be written as
 %\begin{dmath}\label{eqn:stokesTheoremCore:280}
 \boxedEquation{eqn:stokesTheoremCore:280}{
 \begin{aligned}
-\int_A d^2 \Bx \cdot \spacegrad \phi &= \ointclockwise d\Bx \phi \\
+\int_A d^2 \Bx \cdot \spacegrad \psi &= \ointclockwise d\Bx \psi \\
 \int_A d^2 \Bx \cdot (\spacegrad \wedge \Bf) &= \ointclockwise d\Bx \cdot \Bf.
 \end{aligned}
 }
@@ -235,15 +235,15 @@ The vector derivative, the projection of the gradient onto the surface at the po
 \Bx^c \partial_c.
 \end{dmath}
 
-The Stokes integral can be evaluated over this volume element for either scalar fields \( \phi \), vector fields \( \Bf \), or bivector fields \( B \) and takes the form
+The Stokes integral can be evaluated over this volume element for either scalar fields \( \psi \), vector fields \( \Bf \), or bivector fields \( B \) and takes the form
 
 \begin{subequations}
 \label{eqn:stokesTheoremCore:1481}
 \begin{equation}\label{eqn:stokesTheoremCore:1501}
-\int_V d^3 \Bx \cdot (\boldpartial \wedge \phi) =
-\int_V (d^3 \Bx \cdot \boldpartial) \phi
+\int_V d^3 \Bx \cdot (\boldpartial \wedge \psi) =
+\int_V (d^3 \Bx \cdot \boldpartial) \psi
 =
-\int_{\partial V} d^2 \Bx \phi
+\int_{\partial V} d^2 \Bx \psi
 \end{equation}
 \begin{equation}\label{eqn:stokesTheoremCore:1521}
 \int_V d^3 \Bx \cdot (\boldpartial \wedge \Bf) =
@@ -284,8 +284,71 @@ d\Bx_b \wedge d\Bx_c +
 d\Bx_c \wedge d\Bx_a.
 \end{dmath}
 
-\section{Related identities}
+\section{Using scalar volume elements}
+
+In \R{3} the area and volume elements of \cref{eqn:stokesTheoremCore:140}, and \cref{eqn:stokesTheoremCore:1481} can be reexpressed as scalars, recovering a number of the integral calculus identities that are more familiar than the wedge product variants above.
+
+The pseudoscalar volume element can be written
+
+\begin{dmath}\label{eqn:stokesTheoremCore:1621}
+d^3 \Bx = I dV,
+\end{dmath}
+
+and the (oriented) area elements can be written as
+
+\begin{dmath}\label{eqn:stokesTheoremCore:1641}
+d^2 \Bx \ncap = I dA,
+\end{dmath}
+
+or
+\begin{dmath}\label{eqn:stokesTheoremCore:1661}
+d^2 \Bx = I \ncap dA.
+\end{dmath}
+
+For \( \psi \in \bigwedge^0, \BA \in \bigwedge^1, B \in \bigwedge^2 \), this gives
+
+\begin{subequations}
+\label{eqn:stokesTheoremCore:1681}
+\begin{equation}\label{eqn:stokesTheoremCore:1701}
+I \int_A dA \ncap \wedge \spacegrad \psi = \ointclockwise d\Bx \psi
+\end{equation}
+\begin{equation}\label{eqn:stokesTheoremCore:1721}
+I \int_A dA \ncap \wedge \spacegrad \wedge \BA = \ointclockwise d\Bx \psi
+\end{equation}
+\begin{equation}\label{eqn:stokesTheoremCore:1741}
+\int_V dV \spacegrad \psi = \int_{\partial V} dA \ncap \psi
+\end{equation}
+\begin{equation}\label{eqn:stokesTheoremCore:1761}
+\int_V dV \spacegrad \wedge \BA = \int_{\partial V} dA \ncap \wedge \BA
+\end{equation}
+\begin{equation}\label{eqn:stokesTheoremCore:1781}
+\int dV \spacegrad \wedge B = \int_{\partial V} dA \ncap \wedge B
+\end{equation}
+\end{subequations}
+
+It is simple to reexpress all the wedge products above in their dual forms.  With \( B = I \BA \), that is
+
+\begin{subequations}
+\label{eqn:stokesTheoremCore:1801}
+\begin{equation}\label{eqn:stokesTheoremCore:1821}
+\int_A dA \ncap \cross \spacegrad \psi = \ointctrclockwise d\Bx \psi
+\end{equation}
+\begin{equation}\label{eqn:stokesTheoremCore:1841}
+\int_A dA \ncap \cdot (\spacegrad \cross \BA) = \ointctrclockwise d\Bx \psi
+\end{equation}
+\begin{equation}\label{eqn:stokesTheoremCore:1861}
+\int_V dV \spacegrad \psi = \int_{\partial V} dA \ncap \psi
+\end{equation}
+\begin{equation}\label{eqn:stokesTheoremCore:1881}
+\int_V dV \spacegrad \cross \BA = \int_{\partial V} dA \ncap \cross \BA
+\end{equation}
+\begin{equation}\label{eqn:stokesTheoremCore:1901}
+\int dV \spacegrad \cdot \BA = \int_{\partial V} dA \ncap \cdot \BA.
+\end{equation}
+\end{subequations}
 
 \section{Helper theorem}
 
 \input{../gabookI/appendix/wedgeDistributionIdentity.tex}
+
+\section{Problems}
