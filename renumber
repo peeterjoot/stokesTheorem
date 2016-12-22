@@ -4,3 +4,5 @@ perl -p -i ../latex/bin/latexRegex.pl stokesTheoremCore.tex
 perl -p -i ../latex/bin/latexRegex.pl stokesTheoremCoreProblems.tex
 ../latex/bin/lgrep bladeDotWedgeSymmetryIdentities.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl bladeDotWedgeSymmetryIdentities.tex
+../latex/bin/lgrep stokesAndGreens.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl stokesAndGreens.tex
