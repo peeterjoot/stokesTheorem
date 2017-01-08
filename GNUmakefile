@@ -1,6 +1,5 @@
 THISDIR := stokesTheorem
 THISBOOK := $(THISDIR)
-BASEVER := daa1713
 
 include ../latex/make.vars
 
