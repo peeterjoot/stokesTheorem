@@ -4,10 +4,13 @@
 %
 
 \makeproblem{\R{3} dual forms of Stokes' theorem.}{problem:stokesTheoremCoreProblems:1}{
+Prove
 \makesubproblem{}{problem:stokesTheoremCoreProblems:1:a}
-Prove \cref{eqn:stokesTheoremCore:1681},
+\cref{eqn:stokesTheoremCore:1681},
 \makesubproblem{}{problem:stokesTheoremCoreProblems:1:b}
-and \cref{eqn:stokesTheoremCore:1801}.
+\cref{eqn:stokesTheoremCore:1801},
+\makesubproblem{}{problem:stokesTheoremCoreProblems:1:c}
+and \cref{eqn:stokesTheoremCore:1801c}.
 } % problem
 
 \makeanswer{problem:stokesTheoremCoreProblems:1}{
@@ -115,6 +118,24 @@ To show \cref{eqn:stokesTheoremCore:1901} note that
 \gpgradethree{ I \Ba \cdot \BA }
 =
 I (\Ba \cdot \BA).
+\end{dmath}
+
+\makeSubAnswer{}{problem:stokesTheoremCoreProblems:1:c}
+
+For vector \( \Ba \), these transformations all follow from
+
+\begin{dmath}\label{eqn:stokesTheoremCoreProblems:300}
+\Ba \cross \Bf
+=
+\gpgradeone{ -I \Ba \wedge \Bf}
+=
+\gpgradeone{ -I \Ba \Bf}
+=
+-\gpgradeone{ \Ba I \Bf}
+=
+-\Ba \cdot (I \Bf)
+=
+\Ba \cdot B.
 \end{dmath}
 
 } % answer
