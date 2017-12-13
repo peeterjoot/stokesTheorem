@@ -1,62 +1,122 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Copyright © 2016 Peeter Joot.  All Rights Reserved.
-% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+% This is a slightly modified version of the classic-thesis template described below.
 %
-%{
-\input{../latex/blogpost.tex}
-\renewcommand{\basename}{stokesTheorem}
-%\renewcommand{\dirname}{notes/phy1520/}
-\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
-%\newcommand{\dateintitle}{}
-%\newcommand{\keywords}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% **************************************************************************************************************
+% A Classic Thesis Style
+% An Homage to The Elements of Typographic Style
+%
+% Copyright (C) 2011 Andr\'e Miede http://www.miede.de
+%
+% If you like the style then I would appreciate a postcard. My address
+% can be found in the file ClassicThesis.pdf. A collection of the
+% postcards I received so far is available online at
+% http://postcards.miede.de
+%
+% License:
+% This program is free software; you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation; either version 2 of the License, or
+% (at your option) any later version.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this program; see the file COPYING.  If not, write to
+% the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+% Boston, MA 02111-1307, USA.
+%
+% **************************************************************************************************************
+% Note:
+%    * You must not use "u etc. in strings/commands that will be spaced out (use \"u or real umlauts instead)
+%    * New enumeration (small caps): \begin{aenumerate} \end{aenumerate}
+%    * For margin notes: \marginpar or \graffito{}
+%    * Do not use bold fonts in this style, it is designed around them
+%    * Use tables as in the examples
+%    * See classicthesis-preamble.sty for useful commands
+% **************************************************************************************************************
+% To Do:
+%		 * [high] Check this out: http://www.golatex.de/koma-script-warnung-in-verbindung-mit-listings-package-t2058.html
+%    * [medium] mathbb in section-titles/chapter-titles => disappears somehow in headlines!!!
+% **************************************************************************************************************
 
-\input{../latex/peeter_prologue_print2.tex}
+\PassOptionsToPackage{dvipsnames,svgnames}{xcolor}
 
-\usepackage{peeters_layout_exercise}
-\usepackage{peeters_braket}
-\usepackage{peeters_figures}
-\usepackage{siunitx}
-\usepackage{macros_cal}
-%\usepackage{mhchem} % \ce{}
-%\usepackage{macros_bm} % \bcM
-\usepackage{macros_qed} % \qedmarker
-\usepackage{txfonts} % \ointclockwise
+\documentclass[ twoside,openright,titlepage,numbers=noenddot,headinclude,
+                footinclude=true,cleardoublepage=empty,abstractoff,
+                BCOR=5mm,paper=letter,fontsize=11pt,
+                floatperchapter,
+                ngerman,american,%
+                ]{scrreprt}
 
-\beginArtNoToc
+%********************************************************************
+% Note: Make all your adjustments in here
+%*******************************************************
+\input{classicthesis-config}
 
-\generatetitle{Stokes Theorem}
-%\chapter{Geometric Algebra representation of Maxwell's equations in the frequency domain}
-%\label{chap:stokesTheorem}
-% \citep{doran2003gap}
-% \citep{jackson1975cew}
-% \citep{griffiths1999introduction}
+\myClassicThesisOverrides
 
-\section{Stokes' Theorem}
-   \input{statement.tex}
+%********************************************************************
+% Hyphenation
+%*******************************************************
+%\hyphenation{put special hyphenation here}
 
-\section{One parameter specialization of Stokes' theorem.}
-   \input{oneparameter.tex}
+% ********************************************************************
+% GO!GO!GO! MOVE IT!
+%*******************************************************
+\begin{document}
+\frenchspacing
+\raggedbottom
+\selectlanguage{american} % american ngerman
+%\renewcommand*{\bibname}{new name}
+%\setbibpreamble{}
+\pagenumbering{roman}
+\pagestyle{plain}
+%********************************************************************
+% Frontmatter
+%*******************************************************
+\include{FrontBackmatter/DirtyTitlepage}
+\include{FrontBackmatter/Titlepage}
+\include{FrontBackmatter/Titleback}
 
-\section{Two parameter specialization of Stokes' theorem.}
-   \input{twoparameter.tex}
+\cleardoublepage\include{FrontBackmatter/copyright}
+\cleardoublepage\include{FrontBackmatter/Version}
+\cleardoublepage\include{FrontBackmatter/Dedication}
+\cleardoublepage\include{FrontBackmatter/preface}
 
-\section{Three parameter specialization of Stokes' theorem.}
-   \input{threeparameter.tex}
+%\cleardoublepage\include{FrontBackmatter/Foreword}
+%\cleardoublepage\include{FrontBackmatter/Abstract}
+%\cleardoublepage\include{FrontBackmatter/Publication}
+%\cleardoublepage\include{FrontBackmatter/Acknowledgments}
+\pagestyle{scrheadings}
+\cleardoublepage\include{FrontBackmatter/Contents}
+%********************************************************************
+% Mainmatter
+%*******************************************************
+\pagenumbering{arabic}
+%%\setcounter{page}{90}
+%% use \cleardoublepage here to avoid problems with pdfbookmark
+%\cleardoublepage
+%\part{Some Kind of Manual}
+%\include{Chapters/Chapter01}
+%\cleardoublepage
+%\ctparttext{You can put some informational part preamble text here.
+%Illo principalmente su nos. Non message \emph{occidental} angloromanic
+%da. Debitas effortio simplificate sia se, auxiliar summarios da que,
+%se avantiate publicationes via. Pan in terra summarios, capital
+%interlingua se que. Al via multo esser specimen, campo responder que
+%da. Le usate medical addresses pro, europa origine sanctificate nos se}
 
-\section{Using scalar volume elements}
-   \input{scalarVolumeElement.tex}
+\input{chapters}
 
-\section{Helper theorems}
-
-   \input{bladeDotWedgeSymmetryIdentitiesTheorem.tex}
-   \input{../gabookI/appendix/wedgeDistributionIdentity.tex}
-
-\section{Problems}
-
-   \input{bladeDotWedgeSymmetryIdentities.tex}
-   \input{../gabookI/appendix/wedgeDistributionIdentityProblems.tex}
-   \input{stokesTheoremCoreProblems.tex}
-
-%}
-\EndArticle
-%\EndNoBibArticle
+%\include{multiToC} % <--- just debug stuff, ignore for your documents
+\input{backmatter}
+% ********************************************************************
+% Game Over: Restore, Restart, or Quit?
+%*******************************************************
+\end{document}
+% ********************************************************************
