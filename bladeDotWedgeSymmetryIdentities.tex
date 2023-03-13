@@ -2,36 +2,29 @@
 % Copyright © CCYY Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-
 \makeproblem{Blade dot and wedge product reductions}{problem:bladeDotWedgeSymmetryIdentities:1}{
 Prove \cref{thm:bladeDotWedgeSymmetryIdentities:180}.
 } % problem
-
 \makeanswer{problem:bladeDotWedgeSymmetryIdentities:1}{
-
 The vector product \( B \Ba \) can have only grades \( k-1, k+1 \), so can be written as
-
-\begin{dmath}\label{eqn:bladeDotWedgeSymmetryIdentities:20}
+\begin{equation}\label{eqn:bladeDotWedgeSymmetryIdentities:20}
 \begin{aligned}
 B \Ba &= B \cdot \Ba + B \wedge \Ba \\
 \Ba B &= \Ba \cdot B + \Ba \wedge B.
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 Suppose that a factorization for the blade \( B \) is found of the form
-
-\begin{dmath}\label{eqn:bladeDotWedgeSymmetryIdentities:40}
+\begin{equation}\label{eqn:bladeDotWedgeSymmetryIdentities:40}
 B = \Bb_1 \wedge \Bb_2 \wedge \cdots \wedge \Bb_k.
-\end{dmath}
+\end{equation}
 
 Then by successive anticommutation of the wedge products
-
-\begin{dmath}\label{eqn:bladeDotWedgeSymmetryIdentities:60}
+\begin{equation}\label{eqn:bladeDotWedgeSymmetryIdentities:60}
 \Ba \wedge B = (-1)^k B \wedge \Ba.
-\end{dmath}
+\end{equation}
 
 The dot products from each direction can also be related
-
 \begin{subequations}
 \label{eqn:bladeDotWedgeSymmetryIdentities:80}
 \begin{equation}\label{eqn:bladeDotWedgeSymmetryIdentities:100}
@@ -55,27 +48,23 @@ B \cdot \Ba
 \end{subequations}
 
 Comparision shows that
-
-\begin{dmath}\label{eqn:bladeDotWedgeSymmetryIdentities:140}
+\begin{equation}\label{eqn:bladeDotWedgeSymmetryIdentities:140}
 \Ba \cdot B = (-1)^{k-1} B \cdot \Ba.
-\end{dmath}
+\end{equation}
 
 The second of the pair of products of \cref{eqn:bladeDotWedgeSymmetryIdentities:20} can now be rewritten
-
-\begin{dmath}\label{eqn:bladeDotWedgeSymmetryIdentities:160}
+\begin{equation}\label{eqn:bladeDotWedgeSymmetryIdentities:160}
 \begin{aligned}
 B \Ba &= B \cdot \Ba + B \wedge \Ba \\
 (-1)^k \Ba B &= - B \cdot \Ba + B \wedge \Ba.
 \end{aligned}
-\end{dmath}
+\end{equation}
 
 Adding these gives
-
-\begin{dmath}\label{eqn:bladeDotWedgeSymmetryIdentities:240}
+\begin{equation}\label{eqn:bladeDotWedgeSymmetryIdentities:240}
 \begin{aligned}
 B \wedge \Ba &= \inv{2}\lr{ B \Ba + (-1)^k \Ba B } \\
 B \cdot \Ba &= \inv{2}\lr{ B \Ba - (-1)^k \Ba B },
 \end{aligned}
-\end{dmath}
-
+\end{equation}
 } % answer
